@@ -3746,6 +3746,26 @@
 
         // Renderizar App
         ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+    </script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabaseUrl = 'https://tduzreaftdxmngwvuefq.supabase.co'
+const supabaseKey = 'sb_publishable_COLE_AQUI_SUA_KEY_COMPLETA'
+
+const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+// TESTE DE CONEXÃO
+async function testarConexao() {
+  const { data, error } = await supabase
+    .from('clientes')
+    .select('*')
+
+  console.log('DADOS:', data)
+  console.log('ERRO:', error)
+}
+
+testarConexao()
+</script>
+
 </body>
 </html>
